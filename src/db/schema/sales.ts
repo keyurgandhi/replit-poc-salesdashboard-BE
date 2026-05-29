@@ -10,7 +10,7 @@ export const salesTable = pgTable("sales", {
   product: text("product").notNull(),
   revenue: numeric("revenue", { precision: 12, scale: 2 }).notNull(),
   units: integer("units").notNull(),
-});
+}); 
 
 export const insertSaleSchema = createInsertSchema(salesTable).omit({ id: true });
 export type InsertSale = z.infer<typeof insertSaleSchema>;
